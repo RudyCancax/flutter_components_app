@@ -15,6 +15,7 @@ class HomeScreen extends StatelessWidget {
           titleTextStyle: const TextStyle(
               color: Colors.white, fontSize: 30, fontWeight: FontWeight.w400),
         ),
+        extendBodyBehindAppBar: true,
         body: ListView.separated(
             itemBuilder: (context, index) => ListTile(
                 title: const Text("Heyouuu"),
@@ -32,6 +33,6 @@ class HomeScreen extends StatelessWidget {
                   Navigator.pushNamed(context, 'listview');
                 }),
             separatorBuilder: (context, index) => const Spacer(),
-            itemCount: 10));
+            itemCount: 15));
   }
 }
