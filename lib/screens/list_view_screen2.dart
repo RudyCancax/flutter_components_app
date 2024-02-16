@@ -8,12 +8,20 @@ class ListViewScreen2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Center(child: Text("List View"))),
+        appBar: AppBar(
+          title: const Text("List View"),
+          backgroundColor: Colors.indigo,
+          centerTitle: true,
+          titleTextStyle: const TextStyle(
+              color: Colors.white, fontSize: 30, fontWeight: FontWeight.w400),
+        ),
         body: ListView.separated(
             itemBuilder: (context, index) => ListTile(
                   title: Text(itemsMenu[index]),
                   trailing: const Icon(Icons.ac_unit),
                   leading: const Icon(Icons.access_alarm_outlined),
+                  onTap: () =>
+                      AlertDialog(title: Text("Tapped ${itemsMenu[index]}")),
                 ),
             separatorBuilder: (_, __) => const Divider(),
             itemCount: itemsMenu.length));
