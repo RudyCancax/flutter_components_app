@@ -35,6 +35,7 @@ Paste next snippet:
 			"		title: const Text('${1:Home}Screen'),",
 			"		backgroundColor: Colors.indigo,",
 			"		centerTitle: true,",
+			"		iconTheme: const IconThemeData(color: Colors.white),",
 			"		toolbarHeight: 50,",
 			"		titleTextStyle: const TextStyle(",
 			"			color: Colors.white, fontSize: 30, fontWeight: FontWeight.w400),",

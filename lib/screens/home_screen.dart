@@ -1,3 +1,4 @@
+import 'package:components_app/screens/list_view_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -21,7 +22,11 @@ class HomeScreen extends StatelessWidget {
                   Icons.account_box_rounded,
                   color: Colors.indigo,
                 ),
-                onTap: () {}),
+                onTap: () {
+                  final route = MaterialPageRoute(
+                      builder: (context) => const ListViewScreen());
+                  Navigator.push(context, route);
+                }),
             separatorBuilder: (context, index) => const Spacer(),
             itemCount: 10));
   }
