@@ -14,7 +14,10 @@ class ListViewScreen extends StatelessWidget {
             ...itemsMenu
                 .map(
                   (e) => ListTile(
-                      title: Text(e), leading: const Icon(Icons.ac_unit)),
+                    title: Text(e),
+                    leading: const Icon(Icons.ac_unit),
+                    trailing: const Icon(Icons.forward),
+                  ),
                 )
                 .toList()
           ],
