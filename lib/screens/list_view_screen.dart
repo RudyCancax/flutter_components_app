@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 
 class ListViewScreen extends StatelessWidget {
-  const ListViewScreen({Key? key}) : super(key: key);
+  const ListViewScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('ListViewScreen'),
-      ),
-    );
+    return Scaffold(
+        appBar: AppBar(title: const Text("List View")),
+        body: ListView(
+          children: const [
+            Text("Hello List view!!!"),
+            Text("Hello List view2!!!")
+          ],
+        ));
   }
 }
