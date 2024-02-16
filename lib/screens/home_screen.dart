@@ -6,6 +6,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final menuOptions = AppRoutes.menuOptions;
     return Scaffold(
         appBar: AppBar(
           title: const Text('HomeScreen'),
@@ -19,7 +20,7 @@ class HomeScreen extends StatelessWidget {
         body: ListView.separated(
             itemBuilder: (context, index) => ListTile(
                   title: Text(AppRoutes.menuOptions.elementAt(index).title),
-                  leading: Icon(AppRoutes.menuOptions.elementAt(index).icon),
+                  leading: Icon(menuOptions.elementAt(index).icon),
                   trailing: const Icon(Icons.navigate_next_rounded),
                   onTap: () {
                     Navigator.pushNamed(
@@ -27,6 +28,6 @@ class HomeScreen extends StatelessWidget {
                   },
                 ),
             separatorBuilder: (_, __) => const Divider(),
-            itemCount: AppRoutes.menuOptions.length));
+            itemCount: menuOptions.length));
   }
 }
