@@ -1,3 +1,4 @@
+import 'package:components_app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 import 'package:components_app/router/app_routes.dart';
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         initialRoute: AppRoutes.initialRoute,
-        routes: AppRoutes.getAppRoutes());
+        routes: AppRoutes.getAppRoutes(),
+        theme: AppTheme.darkTheme);
   }
 }

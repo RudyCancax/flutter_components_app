@@ -21,6 +21,7 @@ class AppRoutes {
     return appRoutes;
   }
 
+  // Normal way to generate a navigation Map to navigate
   // static Map<String, Widget Function(BuildContext)> routes = {
   //   'home': (context) => const HomeScreen(),
   //   'listview2': (context) => const ListViewScreen2(),

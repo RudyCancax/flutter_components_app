@@ -10,11 +10,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: const Text('HomeScreen'),
-          backgroundColor: Colors.indigo,
           centerTitle: true,
-          toolbarHeight: 50,
-          titleTextStyle: const TextStyle(
-              color: Colors.white, fontSize: 30, fontWeight: FontWeight.w400),
         ),
         extendBodyBehindAppBar: true,
         body: ListView.separated(
