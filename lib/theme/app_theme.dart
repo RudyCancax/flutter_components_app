@@ -8,19 +8,19 @@ class AppTheme {
 
   static ThemeData lightTheme() {
     return ThemeData.light().copyWith(
-      primaryColor: primaryColor,
-      listTileTheme: ListTileThemeData(iconColor: primaryColor),
-      appBarTheme: AppBarTheme(
-        backgroundColor: primaryColor,
-        iconTheme: IconThemeData(color: appBarIconColor),
-        titleTextStyle: TextStyle(
-            color: appPrimaryTextColor,
-            fontSize: 30,
-            fontWeight: FontWeight.w400),
-      ),
-      textButtonTheme: TextButtonThemeData(
-          style: TextButton.styleFrom(foregroundColor: appPrimaryTextColor)),
-    );
+        primaryColor: primaryColor,
+        listTileTheme: ListTileThemeData(iconColor: primaryColor),
+        appBarTheme: AppBarTheme(
+          backgroundColor: primaryColor,
+          iconTheme: IconThemeData(color: appBarIconColor),
+          titleTextStyle: TextStyle(
+              color: appPrimaryTextColor,
+              fontSize: 30,
+              fontWeight: FontWeight.w400),
+        ),
+        textButtonTheme: TextButtonThemeData(
+            style: TextButton.styleFrom(foregroundColor: appPrimaryTextColor)),
+        cardTheme: CardTheme(color: primaryColor));
   }
 
   // Dark Theme
