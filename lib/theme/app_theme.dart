@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
   // Light Theme
-  static MaterialColor primaryColor = Colors.green;
+  static Color primaryColor = Colors.green;
   static Color appBarIconColor = Colors.white;
   static Color appBarTextColor = Colors.white;
 
