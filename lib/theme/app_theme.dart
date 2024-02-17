@@ -18,9 +18,16 @@ class AppTheme {
               fontSize: 30,
               fontWeight: FontWeight.w400),
         ),
+        iconTheme: IconThemeData(color: AppTheme.appPrimaryTextColor),
         textButtonTheme: TextButtonThemeData(
             style: TextButton.styleFrom(foregroundColor: appPrimaryTextColor)),
-        cardTheme: CardTheme(color: primaryColor));
+        cardTheme: CardTheme(color: primaryColor),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+            backgroundColor: AppTheme.primaryColor),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(
+                backgroundColor: AppTheme.primaryColor,
+                foregroundColor: AppTheme.appPrimaryTextColor)));
   }
 
   // Dark Theme
