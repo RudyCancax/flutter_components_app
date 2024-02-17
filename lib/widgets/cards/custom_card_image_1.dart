@@ -22,7 +22,8 @@ class CustomCardImage1 extends StatelessWidget {
                     fontSize: 25,
                     fontWeight: FontWeight.w400)),
           ),
-          const Image(
+          const FadeInImage(
+              placeholder: AssetImage("assets/imgs/jar-loading.gif"),
               image: NetworkImage(
                   "https://images.pexels.com/photos/3330895/pexels-photo-3330895.jpeg")),
           Padding(
