@@ -22,6 +22,7 @@ class CustomCardImage1 extends StatelessWidget {
       shadowColor: AppTheme.primaryColor,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
         children: [
           if (imageName != null)
             Padding(
@@ -47,6 +48,11 @@ class CustomCardImage1 extends StatelessWidget {
                 children: [
                   TextButton(onPressed: () {}, child: const Text('OK')),
                   TextButton(onPressed: () {}, child: const Text('Cancelar')),
+                  TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: const Text('Cerrar Alerta')),
                 ],
               ),
             )
