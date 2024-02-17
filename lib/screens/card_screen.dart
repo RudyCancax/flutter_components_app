@@ -21,11 +21,13 @@ class CardScreen extends StatelessWidget {
             ),
             SizedBox(height: 20),
             CustomCardImage1(
+              displayButtons: false,
               imageSource:
                   'https://photographylife.com/wp-content/uploads/2022/01/HDR-with-Flat-Light-and-Bad-Colors.jpg',
             ),
             SizedBox(height: 20),
             CustomCardImage1(
+                displayButtons: true,
                 imageName: 'Raining day!! ⛈️',
                 imageSource:
                     'https://photographylife.com/wp-content/uploads/2019/06/Nikon-Z-14-30mm-f4-S-Sample-Photo-16.jpg')

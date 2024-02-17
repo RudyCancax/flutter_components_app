@@ -3,10 +3,15 @@ import 'package:components_app/theme/app_theme.dart';
 
 class CustomCardImage1 extends StatelessWidget {
   final String imageSource;
+  final bool displayButtons;
   final String? imageName;
 
-  const CustomCardImage1(
-      {super.key, required this.imageSource, this.imageName});
+  const CustomCardImage1({
+    super.key,
+    required this.imageSource,
+    required this.displayButtons,
+    this.imageName,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -34,16 +39,17 @@ class CustomCardImage1 extends StatelessWidget {
             width: double.infinity,
             height: 230,
           ),
-          Container(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                TextButton(onPressed: () {}, child: const Text('OK')),
-                TextButton(onPressed: () {}, child: const Text('Cancelar')),
-              ],
-            ),
-          )
+          if (displayButtons)
+            Container(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  TextButton(onPressed: () {}, child: const Text('OK')),
+                  TextButton(onPressed: () {}, child: const Text('Cancelar')),
+                ],
+              ),
+            )
         ],
       ),
     );
