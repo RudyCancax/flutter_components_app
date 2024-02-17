@@ -18,14 +18,23 @@ class CustomCardImage1 extends StatelessWidget {
             padding: const EdgeInsets.all(10.0),
             child: Text("Card with URL Image",
                 style: TextStyle(
-                    color: AppTheme.appBarTextColor,
+                    color: AppTheme.appPrimaryTextColor,
                     fontSize: 25,
                     fontWeight: FontWeight.w400)),
           ),
           const Image(
               image: NetworkImage(
                   "https://images.pexels.com/photos/3330895/pexels-photo-3330895.jpeg")),
-          const Text("My card")
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton(onPressed: () {}, child: const Text('OK')),
+                TextButton(onPressed: () {}, child: const Text('Cancelar')),
+              ],
+            ),
+          )
         ],
       ),
     );
