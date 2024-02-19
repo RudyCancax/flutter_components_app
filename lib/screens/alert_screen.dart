@@ -74,20 +74,25 @@ class AlertScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: ElevatedButton(
-              //  style: ElevatedButton.styleFrom(
-              //    primary: Colors.red,
-              //    shape: const StadiumBorder(),
-              //    elevation: 0
-              //  ),
-              child: const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                child: Text('Display alert', style: TextStyle(fontSize: 16)),
-              ),
-              //  onPressed: () => displayDialogAndroid( context )
-              onPressed: () => Platform.isAndroid
-                  ? displayDialogAndroid(context)
-                  : displayDialogIOS(context))),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            ElevatedButton(
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                  child: Text('Android Alert', style: TextStyle(fontSize: 14)),
+                ),
+                //  onPressed: () => displayDialogAndroid( context )
+                onPressed: () => displayDialogAndroid(context)),
+            ElevatedButton(
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                  child: Text('iOS Alert', style: TextStyle(fontSize: 14)),
+                ),
+                onPressed: () => displayDialogIOS(context)),
+          ],
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
           child: Icon(Icons.close, color: AppTheme.appPrimaryTextColor),
           onPressed: () => Navigator.pop(context)),
