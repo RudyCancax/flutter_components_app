@@ -1,53 +1,96 @@
-import 'package:flutter/material.dart';
+import 'dart:io';
+
 import 'package:components_app/theme/app_theme.dart';
-import 'package:components_app/widgets/widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class AlertScreen extends StatelessWidget {
-  const AlertScreen({super.key});
+  const AlertScreen({Key? key}) : super(key: key);
+
+  void displayDialogIOS(BuildContext context) {
+    showCupertinoDialog(
+        barrierDismissible: false,
+        context: context,
+        builder: (context) {
+          return CupertinoAlertDialog(
+            title: const Text('Titulo'),
+            content: const Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text('Este es el contenido de la alerta'),
+                SizedBox(height: 10),
+                FlutterLogo(size: 100)
+              ],
+            ),
+            actions: [
+              TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: const Text('Cancelar',
+                      style: TextStyle(color: Colors.red))),
+              TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: Text('Ok',
+                      style: TextStyle(color: AppTheme.primaryColor))),
+            ],
+          );
+        });
+  }
+
+  void displayDialogAndroid(BuildContext context) {
+    showDialog(
+        barrierDismissible: false,
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            elevation: 5,
+            title: const Text('Titulo'),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadiusDirectional.circular(10)),
+            content: const Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text('Este es el contenido de la alerta'),
+                SizedBox(height: 10),
+                FlutterLogo(size: 100)
+              ],
+            ),
+            actions: [
+              TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: const Text(
+                    'Cancelar',
+                    style: TextStyle(color: Colors.red),
+                  )),
+              TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: Text('Ok',
+                      style: TextStyle(color: AppTheme.primaryColor))),
+            ],
+          );
+        });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('AlertScreen'),
-          centerTitle: true,
-        ),
-        body: Center(
+      body: Center(
           child: ElevatedButton(
-              onPressed: () {
-                showDialog(
-                  barrierDismissible:
-                      false, // Disable the option to close the alert outside it
-                  context: context,
-                  builder: (context) {
-                    return AlertDialog(
-                      elevation: 5,
-                      content: const CustomCardImage1(
-                          imageSource:
-                              "https://photographylife.com/wp-content/uploads/2022/01/HDR-with-Flat-Light-and-Bad-Colors.jpg",
-                          displayButtons: true),
-                      title: const Text("Alert dialog title"),
-                      contentPadding: EdgeInsets.zero,
-                      actions: [
-                        ElevatedButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: const Text("ACTION BUTTON"))
-                      ],
-                    );
-                  },
-                );
-              },
-              child: const Text('Display alert')),
-        ),
-        floatingActionButton: FloatingActionButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: Icon(
-              Icons.close,
-              color: AppTheme.appPrimaryTextColor,
-            )));
+              //  style: ElevatedButton.styleFrom(
+              //    primary: Colors.red,
+              //    shape: const StadiumBorder(),
+              //    elevation: 0
+              //  ),
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                child: Text('Display alert', style: TextStyle(fontSize: 16)),
+              ),
+              //  onPressed: () => displayDialogAndroid( context )
+              onPressed: () => Platform.isAndroid
+                  ? displayDialogAndroid(context)
+                  : displayDialogIOS(context))),
+      floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.close, color: AppTheme.appPrimaryTextColor),
+          onPressed: () => Navigator.pop(context)),
+    );
   }
 }
