@@ -13,7 +13,9 @@ class AppRoutes {
     MenuOption(
         'card', 'Card Screen 1', const CardScreen(), Icons.card_giftcard),
     MenuOption('circle-avatar', "Circle Avatar", const CircleAvatarScreen(),
-        Icons.supervised_user_circle_rounded)
+        Icons.supervised_user_circle_rounded),
+    MenuOption('animated-container', 'Animated Cont.',
+        const AnimatedContainerScreen(), Icons.check_box_outline_blank)
   };
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {

@@ -15,17 +15,11 @@ class CircleAvatarScreen extends StatelessWidget {
           ),
         )
       ]),
-      body: Center(
+      body: const Center(
           child: CircleAvatar(
         maxRadius: 100,
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(100),
-          child: const FadeInImage(
-              placeholderFit: BoxFit.cover,
-              placeholder: AssetImage("assets/imgs/pikachu.gif"),
-              image: NetworkImage(
-                  "https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg?w=826&t=st=1708369972~exp=1708370572~hmac=d3ca18b5198528a0485373fa09fb2c78fdf67a5b21ac565cd9072d66fd54a14f")),
-        ),
+        backgroundImage: NetworkImage(
+            "https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg?w=826&t=st=1708369972~exp=1708370572~hmac=d3ca18b5198528a0485373fa09fb2c78fdf67a5b21ac565cd9072d66fd54a14f"),
       )),
     );
   }
