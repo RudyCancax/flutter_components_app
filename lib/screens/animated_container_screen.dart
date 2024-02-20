@@ -1,3 +1,5 @@
+import 'dart:math' show Random;
+
 import 'package:flutter/material.dart';
 
 class AnimatedContainerScreen extends StatefulWidget {
@@ -9,13 +11,16 @@ class AnimatedContainerScreen extends StatefulWidget {
 }
 
 class _AnimatedContainerScreenState extends State<AnimatedContainerScreen> {
-  final double _width = 100;
+  double _width = 100;
   double _heigth = 80;
-  final Color _color = Colors.amber;
+  Color _color = Colors.amber;
   final BorderRadiusGeometry _borderRadius = BorderRadius.circular(20);
 
   void changeShape() {
-    _heigth += 30;
+    _heigth = Random().nextInt(200).toDouble() + 50;
+    _width = Random().nextInt(200).toDouble() + 50;
+    _color = Color.fromRGBO(Random().nextInt(255), Random().nextInt(255),
+        Random().nextInt(255), Random().nextInt(100) / 100);
     setState(() {});
   }
 
