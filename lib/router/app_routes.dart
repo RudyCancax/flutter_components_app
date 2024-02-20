@@ -15,7 +15,9 @@ class AppRoutes {
     MenuOption('circle-avatar', "Circle Avatar", const CircleAvatarScreen(),
         Icons.supervised_user_circle_rounded),
     MenuOption('animated-container', 'Animated Cont.',
-        const AnimatedContainerScreen(), Icons.check_box_outline_blank)
+        const AnimatedContainerScreen(), Icons.check_box_outline_blank),
+    MenuOption('inputs-screen', 'Inputs & Forms', const InputScreen(),
+        Icons.input_rounded)
   };
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
