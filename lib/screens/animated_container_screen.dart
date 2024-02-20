@@ -19,8 +19,8 @@ class _AnimatedContainerScreenState extends State<AnimatedContainerScreen> {
   void changeShape() {
     _heigth = Random().nextInt(200).toDouble() + 50;
     _width = Random().nextInt(200).toDouble() + 50;
-    _color = Color.fromRGBO(Random().nextInt(255), Random().nextInt(255),
-        Random().nextInt(255), Random().nextInt(100) / 100);
+    _color = Color.fromRGBO(
+        Random().nextInt(255), Random().nextInt(255), Random().nextInt(255), 1);
     setState(() {});
   }
 
@@ -29,10 +29,23 @@ class _AnimatedContainerScreenState extends State<AnimatedContainerScreen> {
     return Scaffold(
       appBar: AppBar(title: const Text('AnimatedContainerScreen')),
       body: Center(
-          child: Container(
-        width: _width,
-        height: _heigth,
-        decoration: BoxDecoration(borderRadius: _borderRadius, color: _color),
+          // child: Container(
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [Text("H: $_heigth --- "), Text("W: $_width")],
+          ),
+          AnimatedContainer(
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.easeOutCubic,
+            width: _width,
+            height: _heigth,
+            decoration:
+                BoxDecoration(borderRadius: _borderRadius, color: _color),
+          ),
+        ],
       )),
       floatingActionButton: FloatingActionButton(
           onPressed: () {

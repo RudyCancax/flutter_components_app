@@ -5,7 +5,7 @@ import 'package:components_app/screens/screens.dart';
 class AppRoutes {
   static const initialRoute = 'home';
   static final menuOptions = <MenuOption>{
-    MenuOption('home', "Home Screen", const HomeScreen(), Icons.home),
+    // MenuOption('home', "Home Screen", const HomeScreen(), Icons.home),
     // MenuOption('listview2', "List View 2", const ListViewScreen2(), Icons.list),
     // MenuOption(
     //     'listview', "List View", const ListViewScreen(), Icons.list_sharp),
@@ -20,6 +20,7 @@ class AppRoutes {
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
     Map<String, Widget Function(BuildContext)> appRoutes = {};
+    appRoutes.addAll({'home': (BuildContext context) => const HomeScreen()});
     for (final option in menuOptions) {
       appRoutes.addAll({option.route: (BuildContext context) => option.screen});
     }
