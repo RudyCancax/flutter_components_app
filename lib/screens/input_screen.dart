@@ -1,4 +1,3 @@
-import 'package:components_app/theme/app_theme.dart';
 import 'package:components_app/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +14,7 @@ class InputScreen extends StatelessWidget {
               child: Column(
                 children: [
                   const CustomInput1(
+                      inputType: TextInputType.name,
                       equalVar: 3,
                       majorThan: 3,
                       leftIcon: Icons.nest_cam_wired_stand),
@@ -22,9 +22,19 @@ class InputScreen extends StatelessWidget {
                     height: 30,
                   ),
                   const CustomInput1(
+                    inputType: TextInputType.emailAddress,
                     equalVar: 1,
                     majorThan: 5,
                     leftIcon: Icons.ac_unit_sharp,
+                  ),
+                  Container(
+                    height: 30,
+                  ),
+                  const CustomInput1(
+                    inputType: TextInputType.visiblePassword,
+                    equalVar: 8,
+                    majorThan: 10,
+                    leftIcon: Icons.password_rounded,
                   ),
                   Container(
                     height: 30,
