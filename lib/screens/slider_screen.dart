@@ -84,6 +84,7 @@ class _SliderScreenState extends State<SliderScreen> {
               setState(() {});
             },
           ),
+          const AboutListTile(),
           Expanded(
             child: SingleChildScrollView(
                 child: Image(

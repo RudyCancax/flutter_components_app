@@ -19,7 +19,9 @@ class AppRoutes {
     MenuOption('inputs-screen', 'Inputs & Forms', const InputScreen(),
         Icons.input_rounded),
     MenuOption(
-        'slide-screen', 'Slider & Checks', const SliderScreen(), Icons.photo)
+        'slide-screen', 'Slider & Checks', const SliderScreen(), Icons.photo),
+    MenuOption('listview-builder', 'ListView Builder',
+        const ListViewBuilderScreen(), Icons.list)
   };
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
