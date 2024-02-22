@@ -6,6 +6,8 @@ class CustomInput1 extends StatelessWidget {
   final int majorThan;
   final IconData leftIcon;
   final TextInputType inputType;
+  final String formPropertie;
+  final Map<String, dynamic> form;
 
   const CustomInput1({
     super.key,
@@ -13,11 +15,12 @@ class CustomInput1 extends StatelessWidget {
     required this.equalVar,
     required this.majorThan,
     required this.leftIcon,
+    required this.formPropertie,
+    required this.form,
   });
 
   @override
   Widget build(BuildContext context) {
-    print(inputType);
     final textInputType = inputType.toJson()["name"].toString();
     var specificHintText = '';
 
@@ -33,7 +36,9 @@ class CustomInput1 extends StatelessWidget {
       autofocus: true,
       obscureText: textInputType.contains('visiblePassword'),
       keyboardType: inputType,
-      // onChanged: (value) {},
+      onChanged: (value) {
+        form[formPropertie] = value;
+      },
       validator: (value) {
         final valueStr = value.toString();
         if (valueStr.length == equalVar) {

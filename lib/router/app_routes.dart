@@ -17,7 +17,9 @@ class AppRoutes {
     MenuOption('animated-container', 'Animated Cont.',
         const AnimatedContainerScreen(), Icons.check_box_outline_blank),
     MenuOption('inputs-screen', 'Inputs & Forms', const InputScreen(),
-        Icons.input_rounded)
+        Icons.input_rounded),
+    MenuOption(
+        'slide-screen', 'Slider & Checks', const SliderScreen(), Icons.photo)
   };
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
