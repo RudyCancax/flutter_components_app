@@ -1,3 +1,4 @@
+import 'package:components_app/theme/app_theme.dart';
 import 'package:components_app/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -52,6 +53,15 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
     images.addAll([1, 2, 3, 4, 5].map((image) => lastID + image));
   }
 
+  Future<void> onRefresh() async {
+    await Future.delayed(const Duration(seconds: 2));
+    final lastId = images.last;
+    images.clear();
+    images.add(lastId + 1);
+    add5images();
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -62,18 +72,22 @@ class _ListViewBuilderScreenState extends State<ListViewBuilderScreen> {
         removeTop: true,
         child: Stack(
           children: [
-            ListView.builder(
-              controller: scrollController,
-              itemCount: images.length,
-              itemBuilder: (BuildContext context, index) {
-                return FadeInImage(
-                    width: double.infinity,
-                    height: 300,
-                    fit: BoxFit.cover,
-                    placeholder: const AssetImage('assets/imgs/pikachu.gif'),
-                    image: NetworkImage(
-                        'https://picsum.photos/500/300?image=${images[index]}'));
-              },
+            RefreshIndicator(
+              onRefresh: onRefresh,
+              color: AppTheme.primaryColor,
+              child: ListView.builder(
+                controller: scrollController,
+                itemCount: images.length,
+                itemBuilder: (BuildContext context, index) {
+                  return FadeInImage(
+                      width: double.infinity,
+                      height: 300,
+                      fit: BoxFit.cover,
+                      placeholder: const AssetImage('assets/imgs/pikachu.gif'),
+                      image: NetworkImage(
+                          'https://picsum.photos/500/300?image=${images[index]}'));
+                },
+              ),
             ),
             if (isLoading)
               Positioned(

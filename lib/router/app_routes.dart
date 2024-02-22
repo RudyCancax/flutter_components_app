@@ -20,7 +20,7 @@ class AppRoutes {
         Icons.input_rounded),
     MenuOption(
         'slide-screen', 'Slider & Checks', const SliderScreen(), Icons.photo),
-    MenuOption('listview-builder', 'ListView Builder',
+    MenuOption('listview-builder', 'Infinite Scroll, loading, pull to refresh',
         const ListViewBuilderScreen(), Icons.list)
   };
 
