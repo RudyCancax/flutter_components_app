@@ -17,7 +17,7 @@ class _SliderScreenState extends State<SliderScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Slider')),
+      appBar: AppBar(title: const Text('Slider, checks & switch')),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
